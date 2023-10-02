@@ -3,7 +3,7 @@
 	import { buttonVariants } from '$lib/components/ui/button';
 </script>
 
-<main class="px-8 py-4 min-h-screen flex flex-col">
+<main class="flex min-h-screen flex-col px-8 py-4">
 	<nav class="flex justify-between">
 		<a
 			class={buttonVariants({
