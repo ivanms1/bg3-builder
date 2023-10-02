@@ -1,0 +1,22 @@
+<script>
+	import '../app.postcss';
+	import { buttonVariants } from '$lib/components/ui/button';
+</script>
+
+<main class="px-8 py-4 min-h-screen flex flex-col">
+	<nav class="flex justify-between">
+		<a
+			class={buttonVariants({
+				variant: 'default'
+			})}
+			href="/">Home</a
+		>
+		<a
+			class={buttonVariants({
+				variant: 'default'
+			})}
+			href="/login">Login</a
+		>
+	</nav>
+	<slot />
+</main>
