@@ -17,11 +17,20 @@
 </script>
 
 <form
-	class="flex flex-col gap-4"
-	in:fly={{ x: 500, duration: 1000 }}
+	class="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 transform flex-col items-center gap-10"
+	in:fly={{ x: 400, duration: 400, delay: 200 }}
+	out:fly={{ x: -400, duration: 500 }}
 	on:submit|preventDefault={handleSubmit}
 >
-	<h1>Choose the name of your character</h1>
-	<Input type="name" bind:value={name} id="name" placeholder="Name" />
-	<Button>Next</Button>
+	<h1 class="text-5xl font-bold">Choose the name of your character</h1>
+	<Input
+		autofocus
+		autocomplete="off"
+		type="name"
+		class="max-w-md"
+		bind:value={name}
+		id="name"
+		placeholder="Name"
+	/>
+	<Button class="w-40">Next</Button>
 </form>

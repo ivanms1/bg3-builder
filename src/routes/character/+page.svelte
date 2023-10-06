@@ -27,22 +27,7 @@
 	};
 </script>
 
-<div class="flex gap-2">
-	<Button
-		on:click={() => (currentStep = 'name')}
-		variant={currentStep === 'name' ? 'secondary' : 'outline'}>Name</Button
-	>
-	<Button
-		on:click={() => (currentStep = 'race')}
-		variant={currentStep === 'race' ? 'secondary' : 'outline'}>Race</Button
-	>
-	<Button
-		on:click={() => (currentStep = 'class')}
-		variant={currentStep === 'class' ? 'secondary' : 'outline'}>Class</Button
-	>
-</div>
-
-<div class="flex flex-1 flex-col items-center justify-center gap-4">
+<div>
 	<svelte:component
 		this={steps[currentStep].component}
 		bind:currentStep
