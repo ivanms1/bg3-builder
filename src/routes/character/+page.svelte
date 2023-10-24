@@ -1,17 +1,12 @@
 <script lang="ts">
-	import { cn } from '$lib/utils';
 	import NameStep from './Name.svelte';
 	import RaceStep from './Race.svelte';
 	import ClassStep from './Class.svelte';
-	import { Button } from '$lib/components/ui/button';
+	import LevelsStep from './Levels.svelte';
 
-	let currentStep: 'name' | 'race' | 'class' = 'name';
+	import { build } from '$lib/store/build';
 
-	let name = '';
-	let race = '';
-	let className = '';
-
-	let steps = {
+	const steps = {
 		name: {
 			id: 'name',
 			component: NameStep
@@ -23,16 +18,14 @@
 		class: {
 			id: 'class',
 			component: ClassStep
+		},
+		levels: {
+			id: 'levels',
+			component: LevelsStep
 		}
 	};
 </script>
 
 <div>
-	<svelte:component
-		this={steps[currentStep].component}
-		bind:currentStep
-		bind:name
-		bind:className
-		bind:race
-	/>
+	<svelte:component this={steps[$build.currentStep].component} />
 </div>
