@@ -137,7 +137,7 @@ const initialBuild: {
 		plusOne: string;
 		plusTwo: string;
 	};
-	gear?: Record<
+	gear: Record<
 		number,
 		{
 			head: string[];
