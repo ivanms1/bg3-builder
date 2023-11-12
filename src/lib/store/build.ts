@@ -118,7 +118,6 @@ const initialAbilities: Record<string, number> = {
 
 const initialBuild: {
 	name: string;
-	className: string;
 	race: {
 		label: string;
 		value: string;
@@ -155,8 +154,7 @@ const initialBuild: {
 		}
 	>;
 } = {
-	name: '',
-	className: '',
+	name: 'Tav',
 	race: {
 		label: '',
 		value: ''

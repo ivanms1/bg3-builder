@@ -48,7 +48,7 @@
 								}
 							}}>-</Button
 						>
-						<p>
+						<p class="min-w-[14px] text-center">
 							{$build.abilities?.[ability] +
 								($build.bonusAbilities.plusOne === ability
 									? 1
