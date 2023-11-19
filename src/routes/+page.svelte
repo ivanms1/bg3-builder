@@ -1,5 +1,5 @@
 <script>
-	import { BuildDisplay } from '$lib/components/build-display';
+	import { BuildSummary } from '$lib/components/build-summary';
 	import { Abilities } from '$lib/components/build-form/abilities';
 	import { Background } from '$lib/components/build-form/background';
 	import { Gear } from '$lib/components/build-form/gear';
@@ -46,6 +46,6 @@
 				<Gear />
 			</Tabs.Content>
 		</Tabs.Root>
-		<BuildDisplay />
+		<BuildSummary />
 	</div>
 </div>

@@ -1,5 +1,44 @@
 import { writable } from 'svelte/store';
 
+export type BuildStore = {
+	name: string;
+	race: {
+		label: string;
+		value: string;
+	};
+	subrace: {
+		label: string;
+		value: string;
+	};
+	background: {
+		label: string;
+		value: string;
+	};
+	levels: Record<number, { comment: string; className: string }>;
+	abilities: Record<string, number>;
+	bonusAbilities: {
+		plusOne: string;
+		plusTwo: string;
+	};
+	gear: Record<
+		number,
+		{
+			head: string[];
+			torso: string[];
+			hands: string[];
+			boots: string[];
+			cloak: string[];
+			necklace: string[];
+			firstRing: string[];
+			secondRing: string[];
+			weaponPrimary: string[];
+			weaponSecondary: string[];
+			rangePrimary: string[];
+			rangeSecondary: string[];
+		}
+	>;
+};
+
 function createBuild() {
 	const { subscribe, set, update } = writable(initialBuild);
 
@@ -116,44 +155,7 @@ const initialAbilities: Record<string, number> = {
 	charisma: 8
 };
 
-const initialBuild: {
-	name: string;
-	race: {
-		label: string;
-		value: string;
-	};
-	subrace: {
-		label: string;
-		value: string;
-	};
-	background: {
-		label: string;
-		value: string;
-	};
-	levels: Record<number, { comment: string; className: string }>;
-	abilities: Record<string, number>;
-	bonusAbilities: {
-		plusOne: string;
-		plusTwo: string;
-	};
-	gear: Record<
-		number,
-		{
-			head: string[];
-			torso: string[];
-			hands: string[];
-			boots: string[];
-			cloak: string[];
-			necklace: string[];
-			firstRing: string[];
-			secondRing: string[];
-			weaponPrimary: string[];
-			weaponSecondary: string[];
-			rangePrimary: string[];
-			rangeSecondary: string[];
-		}
-	>;
-} = {
+const initialBuild: BuildStore = {
 	name: 'Tav',
 	race: {
 		label: '',
